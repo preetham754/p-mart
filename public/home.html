@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Amazon Site</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+    <style>
+    
+
+      .navbar-custom {
+            background-color: #094d14; /* Amazon navbar color */
+            font-size: 25px;
+            padding-top: 10px;
+            padding-bottom: 2px;
+            padding-right: 15px;
+            padding-left: 10px;
+          
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: white; /* Link color */
+           
+        }
+        .navbar-custom a:hover{
+          background-color: #263aec;
+          color: black;
+          font-size: 30px;
+          padding-left: 5px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-right: 5px;
+          border-radius: 3px;
+         
+        }
+        .search-bar {
+            width: 500px; /* Adjust width as needed */
+            height: 50px;
+            border-radius: 5px;
+        }
+        .product {
+            border: 1px solid #ddd; /* Product border */
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .btn{
+          border-color: rgb(10, 10, 9);
+          background-color: white;
+          height: 49px;
+          width: 70px;
+          float: right;
+        }
+        body{
+          background-color: rgb(156, 235, 156);
+        }
+        .btn:hover{
+            background-color: #263aec;
+            color: white;
+            font-weight: 200;
+            font-size: 18px;
+            text-align: center;
+        }
+        #carouselExampleIndicators{
+          width: 520px;
+          height: 100px;
+          padding-left: 10px;
+         
+        }
+        
+      .carousel-control-prev{
+        top: 200%;
+      
+      }
+      .carousel-control-next{
+        top: 200%;
+      }
+      .sign-in{
+        left: 200%;
+        
+      }
+      marquee{
+        background-color: #168829;
+        color: rgb(231, 227, 13);
+        font-weight: 500;
+      }
+      .carousel-caption{
+        color:black;
+      }
+      .carousel-control-prev-icon{
+        background-color: rgb(124, 241, 124);
+        border-radius: 5px;
+      }
+      .carousel-control-next-icon{
+        background-color: rgb(124, 241, 124);
+        border-radius: 5px;
+        padding-right: 0;
+      }
+      .iphone{
+        padding-left: 530px;
+        margin-top: -100px;
+        
+      }
+      .tv{
+        padding-left: 840px;
+        margin-top: -300px;
+      }
+      .panel{
+        background-color: #3e753c;
+        margin-top: 10px;
+        margin-left: 530px;
+        margin-right: 6px;
+        text-align: center;
+        color: white;
+        padding-bottom: 14px;
+        padding-right: 50px;
+        width: auto;
+       
+     
+      }
+      .l1{
+        margin-left: -600px;
+      }
+      .l2{
+        margin-left: -320px;
+        margin-top: -130px;
+      }
+      .l3{
+        margin-left: -50px;
+        margin-top: -130px;
+      }
+      .l4{
+        margin-left: 200px;
+        margin-top: -130px;
+      }
+      .l5{
+        margin-left: 450px;
+        margin-top: -130px;
+      }
+      .l6{
+        margin-left: 700px;
+        margin-top: -130px;
+      }
+      .card1{
+       margin-left: 10px;
+        margin-top: 13px;
+     
+      }
+      .card2{
+        
+        margin-top: -365px;
+        margin-left: 350px;
+      }
+      .card3{
+        
+        margin-top: -365px;
+        margin-left: 700px;
+      }
+      .card4{
+        
+        margin-top: -365px;
+        margin-left: 1050px;
+      }
+      .btn-primary{
+        color: black;
+        text-align: center;
+        background-color: orange;
+        width: 100px;
+        font-weight: 600;
+        font-size: large;
+        width: 230px;
+      }
+      .notification{
+        align-items: center;
+        padding-right: 10px;
+        padding-top: 10px;
+        cursor:pointer;
+        padding-bottom: 5px;
+      }
+      .card{
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      footer{
+        align-items: center;
+        text-align: center;
+        background-color: #094d14;
+        font-size: larger;
+        color: white;
+        margin-top: 10px;
+        height: 50px;
+      }
+      .top{
+        background-color:#168829;
+        margin-bottom: -10px;
+        margin-top: 100px;
+        align-items: center;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 10px;
+      }
+      .top1{
+        text-decoration: none;
+        color: black;
+        font-size: larger;
+        font-weight: 400;
+        background-color: orange;
+        border-radius: 5px;
+        height: 50px;
+      }
+      .top1:hover{
+        background-color: #263aec;
+        color:white;
+      }
+      
+      #carouselExampleInterval{
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+       
+      }
+      .movies{
+        border-radius: 5px;
+        background-color: orange;
+        color: black;
+        height: 50px;
+        width: 100px;
+      }
+      .movies:hover{
+        background-color: #263aec;
+        color: white;
+      }
+
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        
+        z-index: 1000;
+    }
+    /* Styles for the alert box */
+    .alert-box {
+        background:white;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    .alert-box img {
+        max-width: 100%;
+        height: 620px;
+        width: 900px;
+    }
+    .close-btn{
+      background-color: rgb(252, 250, 246);
+      color: black;
+      border-radius: 10px;
+      font-weight: 500;
+        }
+    .close-btn:hover{
+      background-color: #263aec;
+      color: white;
+    }
+    
+    .btn2{
+      color: black;
+      text-align: center;
+      background-color: orange;
+      width: 100px;
+      font-weight: 600;
+      font-size: large;
+      width: 230px;
+      border-radius: 10px;
+    }
+    .btn2:hover{
+      color: white;
+      background-color: #263aec;
+    }
+
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid black;
+      z-index: 9;
+      border-radius: 5px;
+      margin-bottom: 2px;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 400px;
+      padding: 10px;
+      background-color:rgb(156, 235, 156);
+    }
+    
+    
+    
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: orange;
+      color: black;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      color: white;
+      background-color: #263aec;
+    }
+  
+  
+
+    </style>
+    
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <img src="p.png" height="50" width="50">&nbsp;
+    <a class="navbar-brand text-white" href="#">P mart</a>
+    
+    <select name="category" id="category">
+      <option value="all">Category : All</option>
+      <option value="elec">Electronics</option>
+      <option value="kitchen">Kitchen</option>
+      <option value="app">Home Appliances</option>
+      <option value="cloth">Clothing</option>
+      <option value="mobiles">Mobiles</option>
+
+    </select>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="search-bar" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn" type="submit">Search</button>
+        </form> </div>
+       
+        <li style="color: rgb(255, 72, 0);list-style-type:none;padding-right:30px">Hello,<span id="navbar-username">Guest</span></li>
+    
+        <img src="n.png" height="50" width="40" id="liveToastBtn" class="notification">
+     
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Notifications</strong>
+        <small>Updated 2 seconds ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        No Messages
+      </div>
+    </div>
+  </div>
+  
+        <div class="sign-in">
+        <ul class="navbar-nav ml-auto">
+          
+          
+            <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+        </ul>
+        </div>
+   
+</nav>
+<marquee direction="right">GREAT INDIAN FESTIVAL&nbsp;&nbsp;💥💥Flat 100% OFF on electronics💥💥&nbsp;&nbsp;🛒🚚FREE DELIVERY on all products 🚚🛒ENDING IN 2 DAYS</marquee>
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="s4.jpg" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h5>APPLE</h5>
+      <p style="font-weight: 600; ">₹1,44,000 </p>
+      <button class="btn2" onclick="addtocart('Macbook Air m3',144000,'s4.jpg')">Add to cart</button>
+    </div>
+  </div>
+  
+    <div class="carousel-item ">
+      <img src="s1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>ASUS</h5>
+        <p style="font-weight: 600; ">₹66,000</p>
+        <button class="btn2" onclick="addtocart('Asus zenbook',66000,'s1.jpg')">Add to cart</button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="s3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>HP</h5>
+        <p style="font-weight: 600; ">₹85,999</p>
+        <button class="btn2" onclick="addtocart('Hp x360 pavilion',85000,'s3.jpg')">Add to cart</button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="s5.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>APPLE</h5>
+        <p style="font-weight: 600; ">₹56,990</p>
+        <button class="btn2" onclick="addtocart('macbook air m1',56000,'s5.jpg')">Add to cart</button>
+      </div>
+    </div>
+    
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  
+  
+</div>
+<div class="iphone">
+  <a href="iphone.html">
+<img src="i.jpg" width="300" height="300"></a>
+</div>
+<div class="tv">
+  <img src="t.jpg" width="500" height="300">
+</div>
+<div class="panel">
+  <h1>TOP SELLING BRANDS</h1>
+  <div class="l1">
+  <img src="l1.png" width="100" height="130">
+</div>
+<div class="l2">
+  <img src="l2.jpg" width="100" height="130">
+</div>
+<div class="l3">
+  <img src="l3.png" width="100" height="130">
+</div>
+<div class="l4">
+  <img src="l4.png" width="100" height="130">
+</div>
+<div class="l5">
+  <img src="l5.png" width="100" height="130">
+</div>
+<div class="l6">
+  <img src="l6.png" width="100" height="130">
+</div>
+</div>
+<div class="card1">
+<div class="card" style="width: 18rem;">
+  <img src="o.jpg" class="card-img-top" height="200" >
+  <div class="card-body">
+    <h5 class="card-title">Oneplus nord buds</h5>
+    <p class="card-text">Rs.1999/-</p>
+    
+    <a href="#" class="btn btn-primary" id="LiveAlertPlaceholder"  onclick="prompt()">Add to cart</a>
+  </div>
+</div></div>
+<div class="card2">
+<div class="card" style="width: 18rem;">
+  <img src="o1.jpg" class="card-img-top" height="200" >
+  <div class="card-body">
+    <h5 class="card-title">Under Armour Sneaker</h5>
+    <p class="card-text">Rs.38,999/-</p>
+    <a href="#" class="btn btn-primary" onclick="addtocart('sneakers',38999,'o1.jpg')">Add to cart</a>
+  </div>
+</div></div>
+<div class="card3">
+<div class="card" style="width: 18rem;">
+  <img src="o2.jpg" class="card-img-top" alt="..." height="200">
+  <div class="card-body">
+    <h5 class="card-title">Oneplus 11r 5g</h5>
+    <p class="card-text">Rs.38,999/-</p>
+    <a href="#" class="btn btn-primary" onclick="addtocart('oneplus 11r 5g',38999,'o2.jpg')" >Add to cart</a>
+  </div>
+</div></div>
+<div class="card4">
+  <div class="card" style="width: 18rem;">
+    <img src="o3.webp" class="card-img-top" alt="..." height="200">
+    <div class="card-body">
+      <h5 class="card-title">Samsung galaxy s23 ultra</h5>
+      <p class="card-text">Rs.74,000/-</p>
+      <div id="liveAlertPlaceholder"></div>
+<button type="button" class="btn btn-primary" id="liveAlertBtn" onclick="addtocart('samsung galaxy s23 ultra',74000,'o3.webp')">Add to cart</button>
+    </div>
+  </div></div>
+
+
+<!--movies-->
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="m3.avif" class="d-block w-100" height="620">
+        <div class="carousel-caption d-none d-md-block">
+          <p style="font-weight: 600;color:rgb(119, 253, 9);font-size:50px;font-style:italic">₹499/- </p>
+          <button class="movies" onclick="popup(499)">Rent</button>
+          
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="m2.avif" class="d-block w-100" height="620">
+        <div class="carousel-caption d-none d-md-block">
+          <p style="font-weight: 600;color:white;font-size:50px;font-style:italic">₹199/- </p>
+          <button class="movies" onclick="popup(199)">Rent</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="m1.jpg" class="d-block w-100" height="620">
+        <div class="carousel-caption d-none d-md-block">
+          <p style="font-weight: 600;color:rgb(255, 167, 3);font-size:50px;font-style:italic">₹299/- </p>
+          <button class="movies" onclick="popup(299)">Rent</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <p><span id='price'></span></p>
+        <h3>Payment Method</h3>
+        <input type="radio" id="debitcard" name="rent">
+        <label for="debitcard">Debit card</label><br>
+        <input type="radio" id="creditcard" name="rent">
+        <label for="creditcard">Credit card</label><br>
+        <input type="radio" id="UPI" name="rent">
+        <label for="upi">UPI</label><br>
+        <input type="radio" id="cod" name="rent">
+        <label for="cod">Cash on Delivery</label><br><br>
+        
+        <button type="submit" class="btn">Pay Now</button>
+        <button type="button" class="btn cancel" onclick="closepopup()" >Close</button>
+      </form>
+    </div>
+    
+
+
+
+
+
+
+
+  
+  <script>
+    function prompt() {
+      alert("Item Out Of Stock!");
+    }
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+    
+    const alertTrigger = document.getElementById('liveAlertBtn')
+    if (alertTrigger) {
+      alertTrigger.addEventListener('click', () => {
+        appendAlert('Item Out of Stock!')
+      })
+    }
+  //notification button
+    const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastTrigger.addEventListener('click', () => {
+    toastBootstrap.show()
+  })
+}
+
+function showAlert() {
+  document.getElementById('alertOverlay').style.display = 'flex';
+}
+
+// Function to close the alert
+function closeAlert() {
+  document.getElementById('alertOverlay').style.display = 'none';
+}
+
+// Show the alert when the page loads
+window.onload = showAlert;
+
+//addtocart
+function addtocart(productName, productPrice,productImage) {
+  // Get cart data from localStorage, or initialize an empty cart
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Create an object for the product
+  const product = {
+      name: productName,
+      price: productPrice,
+      image: productImage
+  };
+
+  // Add the product to the cart
+  cart.push(product);
+
+  // Save the updated cart back to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  alert(`${productName} added to cart!`);
+}
+
+function popup(price) {
+  document.getElementById("myForm").style.display = "block";
+  const rentPrice=document.getElementById('price')
+  rentPrice.innerHTML=`<p style="font-size: large;font-weight:bold">Rs.${price}/-</p>`;
+}
+
+function closepopup() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+// Get the query parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get('username');
+
+// Update the username in the navbar
+if (username) {
+    document.getElementById('navbar-username').textContent = username;
+}
+</script>
+
+  
+
+  <!-- 
+  <div class="overlay" id="alertOverlay">
+    <div class="alert-box">
+      <img src="d.jpg" width="600">
+        <button class="close-btn" onclick="closeAlert()">X</button>
+    </div>
+</div>
+-->
+
+</body>
+<div class="top">
+  <a href="#top"><button class="top1">Back To Top</button></a>
+</div>
+  <footer>&copy;2024,P-Mart Website</footer>
+</html>

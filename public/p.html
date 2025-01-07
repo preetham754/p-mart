@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Form Popup</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Address Form with Popup</h2>
+    <!-- Button to trigger the modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addressModal">
+      Enter Address
+    </button>
+
+    <!-- Display Saved Address -->
+    <div class="output">
+      <h3>Saved Address</h3>
+      <p id="displayAddress" class="text-muted">No address saved yet.</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addressModalLabel">Enter Address Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addressForm">
+            <div class="mb-3">
+              <label for="street" class="form-label">Street</label>
+              <input type="text" class="form-control" id="street" placeholder="123 Main St" required>
+            </div>
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" placeholder="City" required>
+            </div>
+            <div class="mb-3">
+              <label for="state" class="form-label">State/Province</label>
+              <input type="text" class="form-control" id="state" placeholder="State or Province" required>
+            </div>
+            <div class="mb-3">
+              <label for="postalCode" class="form-label">Postal Code</label>
+              <input type="text" class="form-control" id="postalCode" placeholder="Postal Code" required>
+            </div>
+            <div class="mb-3">
+              <label for="country" class="form-label">Country</label>
+              <input type="text" class="form-control" id="country" placeholder="Country" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="saveButton" class="btn btn-primary">Save Address</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('saveButton').addEventListener('click', function () {
+      // Get the values from the form inputs
+      const street = document.getElementById('street').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      const postalCode = document.getElementById('postalCode').value;
+      const country = document.getElementById('country').value;
+
+      // Validate that all fields are filled
+      if (!street || !city || !state || !postalCode || !country) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // Format the address into a displayable format
+      const address = `
+        <strong>Street:</strong> ${street} <br>
+        <strong>City:</strong> ${city} <br>
+        <strong>State/Province:</strong> ${state} <br>
+        <strong>Postal Code:</strong> ${postalCode} <br>
+        <strong>Country:</strong> ${country}
+      `;
+
+      // Display the saved address
+      document.getElementById('displayAddress').innerHTML = address;
+
+      // Optional: Clear the form after saving
+      document.getElementById('addressForm').reset();
+
+      // Close the modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('addressModal'));
+      modal.hide();
+    });
+  </script>
+</body>
+</html>
